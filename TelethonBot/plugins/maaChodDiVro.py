@@ -24,7 +24,7 @@ async def amdddd(event):
     k = [[Button.text(text)]]
     await BotzHub.send_message(event.chat_id, "🤡", buttons=k)
     
-@BotzHub.on(events.NewMessage(pattern="^/omkdone"))
+@BotzHub.on(events.NewMessage(pattern="^/omkdone", func=lambda e: e.sender_id in SMEX_USER))
 async def omkr(event):
     if event.msg.get('🤡') is not None:
         await event.msg['🤡'].delete()
