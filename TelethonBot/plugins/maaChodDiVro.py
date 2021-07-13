@@ -26,9 +26,9 @@ async def amdddd(event):
     
 @BotzHub.on(events.NewMessage(pattern="^/omkdone", func=lambda e: e.sender_id in SMEX_USER))
 async def omkr(event):
-    if event.msg.get('🤡') is not None:
-        await event.msg['🤡'].delete()
-    event.msg['🤡'] = await event.reply(event.chat_id, "Today smex done", quote=False)
+    if event.message.get('🤡') is not None:
+        await event.message['🤡'].delete()
+    event.message['🤡'] = await event.reply(event.chat_id, "Today smex done", quote=False)
     await event.delete()
     
 @BotzHub.on(events.NewMessage(pattern="^/skem"))
