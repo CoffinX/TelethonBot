@@ -24,6 +24,13 @@ async def amdddd(event):
     k = [[Button.text(text)]]
     await BotzHub.send_message(event.chat_id, "🤡", buttons=k)
     
+@BotzHub.on(events.NewMessage(pattern="^/omkdone"))
+async def omkr(event):
+    if event.msg.get('🤡') is not None:
+        await event.msg['🤡'].delete()
+    event.msg['🤡'] = await event.reply(event.chat_id, "Today smex done", quote=False)
+    await event.delete()
+    
 @BotzHub.on(events.NewMessage(pattern="^/skem"))
 async def start_all(event):
     if event.is_private:
